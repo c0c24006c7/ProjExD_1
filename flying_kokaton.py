@@ -22,14 +22,27 @@ def main():
         for event in pg.event.get():
             if event.type == pg.QUIT: return
         key_lst=pg.key.get_pressed()
+        dx=-1
+        dy=0
+
         if key_lst[pg.K_UP]:
-            kk_rct.move_ip(0,-1)
+            dx=0
+            dy=-1
+
         if key_lst[pg.K_DOWN]:
-            kk_rct.move_ip(0,1)
+            dx=0
+            dy=1
+
         if key_lst[pg.K_RIGHT]:
-            kk_rct.move_ip(1,0)
+            dx=1
+            dy=0
+
         if key_lst[pg.K_LEFT]:
-            kk_rct.move_ip(-1,0)
+            dx=-1
+            dy=0
+        
+        kk_rct.move_ip(dx,dy)
+
         screen.blit(bg_img, [tobu, 0])
         screen.blit(bg_img2, [tobu+1600, 0])
         screen.blit(bg_img, [tobu+3200, 0])
@@ -39,7 +52,7 @@ def main():
         if tobu<=-3199:
             tobu=0
         tmr += 1  
-        tobu -=5 
+        tobu -=5   
         clock.tick(200)
 
 
