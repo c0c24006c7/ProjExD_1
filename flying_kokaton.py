@@ -26,11 +26,11 @@ def main():
         dy=0
 
         if key_lst[pg.K_UP]:
-            dx=0
+            dx=-1
             dy=-1
 
         if key_lst[pg.K_DOWN]:
-            dx=0
+            dx=-1
             dy=1
 
         if key_lst[pg.K_RIGHT]:
