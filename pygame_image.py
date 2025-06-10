@@ -39,7 +39,7 @@ def main():
         if tobu<=-3199:
             tobu=0
         tmr += 1  
-        tobu -=5   
+        tobu -=5 
         clock.tick(200)
 
 
